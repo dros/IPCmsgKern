@@ -103,8 +103,11 @@ int main(int argc, char *argv[])
     err = IPCmsgKern_MsgSend(connectionId, sendData, 1, receiveData, 1 );
     sleep(1);
     
+    printf("calling IPCmsgKern_ConnectDetach\");
     IPCmsgKern_ConnectDetach(connectionId );
+    printf("calling IPCmsgKern_ChannelDestroy\");
     IPCmsgKern_ChannelDestroy(channelId);
+    printf("calling IPCmsgKern_CloseFileHanle\");
     IPCmsgKern_CloseFileHanle();
   }
   return 0;
